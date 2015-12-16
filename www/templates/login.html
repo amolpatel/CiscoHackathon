@@ -1,0 +1,21 @@
+<ion-view title="Cisco ICR">
+    <ion-content>
+        <div class="row">
+            <img class="image" src="img/ciscologo.png">
+        </div>
+        <div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input ng-model="username" type="text" placeholder="Username" />
+                </label>
+                <label class="item item-input">
+                    <input ng-model="password" type="password" placeholder="Password" />
+                </label>
+            </div>
+            <div class="padding">
+                <button ng-click="login(username, password)" class="button button-block button-stable">Sign In</button>
+                <button ng-click="register(username, password)" class="button button-block button-dark">Register</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

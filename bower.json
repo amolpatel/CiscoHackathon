@@ -1,0 +1,10 @@
+{
+  "name": "TodoApp",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0"
+  },
+  "dependencies": {
+    "ion-sticky": "~1.0.2"
+  }
+}

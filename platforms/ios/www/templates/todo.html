@@ -1,0 +1,33 @@
+<ion-view title="Todo" ng-init="list()">
+    <ion-nav-buttons side="left">
+        <button class="button icon-left ion-chevron-left button-clear button-dark" ng-click="goBack()">Back</button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list card" ng-repeat="todo in data.todos | reverse" class="item">
+            <ion-toggle ng-model=todo.toggle toggle-class="toggle-balanced" class="item item-divider" style="text-align: right" ng-click="updateToggle()" ng-style="myStyle">
+            </ion-toggle>
+            <div ng-if="todo.toggle">
+                "myStyle={
+                        border-top-left-radius: 2px;
+                        border-top-right-radius: 2px;
+                        background-color: floralwhite;
+                    }"
+            </div>
+            <div class="item item-text-wrap">
+                {{todo.title}}
+            </div>
+            <div class="item item-divider">
+                {{todo.timeStamp}}
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="item-input-inset">
+        <label class="item-input-wrapper">
+                <input type="text" placeholder="Enter task here!" ng-model="input">
+            </label>
+            <button class="button button-small" ng-click="create(input)">
+                Submit
+            </button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

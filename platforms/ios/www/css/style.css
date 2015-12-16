@@ -1,0 +1,6 @@
+.item-toggle .toggle {
+    position: inherit;
+    top: 5px;
+    right: -90px;
+    z-index: 3;
+}

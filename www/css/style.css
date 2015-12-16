@@ -1,0 +1,40 @@
+.item-toggle .toggle {
+    position: inherit;
+    top: 5px;
+    right: -90px;
+    z-index: 3;
+}
+
+.onStyle {
+    background-color: #43D17F;
+    height: 4px;
+}
+
+.offStyle {
+    height: 4px;
+    background-color: #E95E50;
+}
+
+.card {
+    padding-top: 0px;
+    border-color: #007aff;
+}
+.image {
+    width:20%;
+    height:20%;
+    align-content: center;
+    display:inline-block;
+    float: right;
+}
+
+.statusStyle{
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: -30px;
+}
+
+.timeStyle{
+    text-align: left;
+    font-size: 10px;
+    margin-bottom: 0px;
+}

@@ -1,0 +1,97 @@
+<ion-view title="Cisco ICR" ng-init="list()">
+    <ion-nav-buttons side="right">
+        <button class="button icon-left button-clear button-dark" ng-click="logout()">Logout</button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="left">
+        <button class="button icon-left button-clear button-dark" ng-click="toggleLeft()">Logout</button>
+    </ion-nav-buttons>
+
+    <ion-side-menus>
+
+        <ion-side-menu-content ng-controller="ViewControl">
+
+            <ion-content>
+
+                <ion-item class="item-divider" style="text-align: center"> Status Stream </ion-item>
+
+                <div class="list card" ng-repeat="todo in data.todos | reverse" class="item">
+                    <div ng-class="todo.toggle ? 'onStyle':'offStyle'">
+                        <br>
+                    </div>
+                    <ion-toggle ng-model=todo.toggle toggle-class="toggle-balanced" class="item item-divider" style="text-align: right" ng-click="updateToggle()" >
+                        <div class="statusStyle" ng-show="todo.toggle">Status: <a style="color:#27ae60">Complete</a></div>
+                        <div class="statusStyle" ng-show="!todo.toggle">Status: <a style="color:#c0392b">Incomplete</a></div>
+
+                    </ion-toggle>
+
+                    <div class="item item-text-wrap">
+                        {{todo.title}}
+                    </div>
+                    <div class="item item-divider" style="font-size: 12px; text-align: right;">
+                        {{todo.timeStamp}}
+                    </div>
+
+                </div>
+
+            </ion-content>
+            <ion-footer-bar align-title="left" class="item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" placeholder="Enter task here!" ng-model="input">
+                </label>
+                <button class="button button-small" ng-click="create(input)" >
+                    Submit
+                </button>
+                </div>
+            </ion-footer-bar>
+        </ion-side-menu-content>
+
+        <ion-side-menu expose-aside-when="large">
+            <ion-content>
+                <ion-item class="item-divider" style="text-align: center"> Jabber Login </ion-item>
+                <div class="list">
+
+                    <div class="item item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input type="text" placeholder="Username">
+                        </label>
+                    </div>
+                    <div class="item item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input type="password" placeholder="Password">
+                        </label>
+                    </div>
+                    <button class="button button-block button-positive activated">Sign In</button>
+                </div>
+                <br><br><br><br><br><br>
+                <ion-item class="item-divider" style="text-align: center"> My Notes </ion-item>
+                <div class="list">
+                    <div class="item">
+                        These are my notes
+                    </div>
+                    <div class="item">
+                        I keep track of my thoughts here
+                    </div>
+                    <div class="item">
+                        Cisco is awesome!!
+                    </div>
+                    <div class="item">
+                        #gladtobehere
+                    </div>
+                </div>
+
+            </ion-content>
+            <ion-footer-bar align-title="left" class="item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" placeholder="Enter notes here" ng-model="input">
+                </label>
+                <button class="button button-small" >
+                    Enter
+                </button>
+                </div>
+            </ion-footer-bar>
+        </ion-side-menu>
+
+
+    </ion-side-menus>
+
+</ion-view>
